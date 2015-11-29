@@ -1,0 +1,27 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ShowStudents</title>
+</head>
+<body>
+    <div>
+        <h3>Students list:</h3>
+        <table>
+            @foreach (var student in ViewBag.Students)
+            {
+            <tr>
+                <td><p>@student.Name</p></td>
+                <td><p>@student.Surname</p></td>
+                <td><p>@student.UniversityID</p></td>
+            </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>

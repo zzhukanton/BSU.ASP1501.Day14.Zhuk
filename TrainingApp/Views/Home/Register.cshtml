@@ -1,0 +1,35 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Register</title>
+</head>
+<body>
+    <div>
+        <h3>Registration form</h3>
+        <form method="post">
+            <input type="hidden" value="@ViewBag.TrainingId" name="TrainingId" />
+            <table>
+                <tr><td><p>Name</p></td>
+                    <td><input type="text" name="Name" /> </td></tr>
+                <tr><td><p>Surname</p></td>
+                    <td><input type="text" name="Surname" /> </td></tr>
+                <tr><td><p>Choose university</p></td><td>
+                   <select>
+                       @foreach (var un in ViewBag.Universities)
+                       {
+                           <option value="@un.Name">@un.Name</option>    
+                       }
+                   </select>
+                    <input type="hidden" name="UniversityID" />
+                <tr><td><input type="submit" value="Отправить" /> </td><td></td></tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Trainings</title>
+</head>
+<body>
+    <div>
+        <h3>Trainings list:</h3>
+        <table>
+            <tr><td><p>Training name</p></td>
+            </tr>
+            @foreach (var training in ViewBag.Trainings)
+            {
+            <tr>
+                <td><p>@training.Title</p></td>
+                <td><p><a href="/Home/Register/@training.TrainingID">Register</a></p></td>
+                <td><p><a href="/Home/ShowStudents/@training.TrainingID">Show students</a></p></td>
+            </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>
